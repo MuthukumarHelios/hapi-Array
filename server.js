@@ -12,16 +12,17 @@ server.route({
        method: 'GET',
        path: '/{x?}',
         handler: function (req, res){
-         var x =  req.params.x//.length;
-          res(x);
+         var x =  req.params.x.split(',');//.length;
+          res(x.sort());
        }
 });
 server.route({
   method: 'GET',
-  path: '/hello',
-  handler: function (req, res) {
+  path: '/hello/{num?}',
+  handler: function (req ,res) {
     // if array is empty, return 0
-    var num = [1,3,4,5,12];
+     var num = req.query.num.split(',');
+    //var num = [1,3,4,5,12];
     if (num.length == 0) {
         return 0;
     }
