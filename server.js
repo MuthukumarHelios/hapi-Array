@@ -1,5 +1,5 @@
 'use strict';
-const hapi = require('hapi');
+var hapi = require('hapi');
 const server = new hapi.Server();
 server.connection({port: 3000, host: 'localhost'});
 server.start((err) => {
@@ -10,25 +10,29 @@ server.start((err) => {
 });
 server.route({
        method: 'GET',
-       path: '/{x?}',
+       path: '/',
         handler: function (req, res){
-         var x =  req.params.x.split(',');//.length;
-          res(x.sort());
+          console.log("api is running success fully");
+         res('hello');
        }
 });
 server.route({
   method: 'GET',
-  path: '/hello/{num?}',
+  path: '/api/{num?}',
   handler: function (req ,res) {
-    // if array is empty, return 0
-     var num = req.query.num.split(',');
-    //var num = [1,3,4,5,12];
-    if (num.length == 0) {
-        return 0;
-    }
+
+      var String_array = [req.query.num];
+  //string_array it stores the array in string type because of http method
+      var num = String_array[0].split(',').map((iteration)=> +iteration);
+        //converts the number of string from arrray
+          console.log(num);
+          if (num.length == 0) {
+           //if the array is empty it returns the zero
+            return 0;
+            }
 
     var check = [];
-    //check [] ==> is used to check the  occurence of the array
+        //check [] ==> is used to check the  occurence of the array
     var find = 1;
      //find is used for check the maximum number
         for (var i=0; i<num.length; i++)
@@ -37,7 +41,6 @@ server.route({
         for (var i=0; i<num.length; i++) {
                 var left = num[i] - 1;
                 var right = num[i] + 1;
-
                 var count = 1;
          // count is the temp variable for check the occurence the the concecutive numbers
                 while (check.indexOf(left) != -1) {
@@ -56,7 +59,7 @@ server.route({
              //max function show the maximum number of ocurence throughout the array
         }
       //res('function executed');
-     res(find);
+     res('longest concequence occurence is'+find);
     //return find;
    //find ==> value returns the longest occurence
   }
