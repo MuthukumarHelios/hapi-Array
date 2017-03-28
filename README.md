@@ -1,8 +1,8 @@
 # hapi-Array
-node -v 
-6.10.10
-npm -v 
-3.10.10
+#node -v 
+#6.10.10
+#npm -v 
+#3.10.10
 
 
 git clone https://github.com/Muthukumars1994/hapi-Array.git
