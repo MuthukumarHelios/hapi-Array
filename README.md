@@ -1,19 +1,17 @@
 # hapi-Array
-#node -v 
+#node -v ==>6.10.10
 
-#6.10.10
-#npm -v 
-
-#3.10.10
-
+#npm -v ==>3.10.10
 
 git clone https://github.com/Muthukumars1994/hapi-Array.git
+
 cd hapi-Array
+
 npm install
+
 node server.js
 
-
-Task:longest occurence of the array
+Task:longest occurence of the array 
 
 I have found out the longest occurence of the array
 
