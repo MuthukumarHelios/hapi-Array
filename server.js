@@ -59,7 +59,7 @@ server.route({
              //max function show the maximum number of ocurence throughout the array
         }
       //res('function executed');
-     res('longest concequence occurence is'+find);
+     res('Output:'+find);
     //return find;
    //find ==> value returns the longest occurence
   }
