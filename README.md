@@ -18,5 +18,6 @@ Pass the input in localhost:3000/api
 
 num = [1,5,8,9,10,11];
 //pass the num in params
-Task:
-     longest occurence of the array 
+
+
+Task:longest occurence of the array 
